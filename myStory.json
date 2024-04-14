@@ -1,0 +1,178 @@
+{
+    "Title": "The long walk home",
+    "Credits": "Created by Thomas Wessel (twessel@ucsc.edu).",
+    "InitialLocation": "Classroom Unit 1",
+    "HasKeyCards": false,
+    "foundHome": false,
+    "ExcludeInTracking": ["HS_NavMenu", "KS_NavMenu", "FULL_NavMenu"],
+    "Locations": {
+        "Classroom Unit 1": {
+            "Body": "After zoning out during CMPM 120, you awake to find that class just ended. You are in Classroom Unit 1, but you're done here for the day. It is time to go home. Would you like to talk to your friends before leaving?",
+            "Choices": [
+                {
+                    "Text": "Talk to friends",
+                    "Target": "FriendConversation"
+                },
+                {
+                    "Text": "Nah, I just want to go home. I don't have time to yap.",
+                    "Target": "HS_NavMenu"
+                }
+            ]
+        },
+        "FriendConversation": {
+            "Body": "You talk to your friends for a bit, but you're tired and want to go home. You say goodbye and head out. As you leave, you hear them shout 'See you in porter tonight'.",
+            "Choices": [
+                {
+                    "Text": "Where to go...",
+                    "Target": "HS_NavMenu"
+                }
+            ]
+        },
+        "HS_NavMenu": {
+            "Body": "Where is home though...? Maybe it is in Merrill, or maybe it is in Porter. You can't remember. You should probably figure that out. Chose a place to go.",
+            "Choices": [
+                {
+                    "preReq": "HasKeyCards",
+                    "Text": "Go to Porter",
+                    "Target": "PorterKeyCard",
+                    "altMessage": "Go To Porter",
+                    "altTarget": "PorterNOKeyCard"
+                },
+                {
+                    "Text": "Go to Merrill",
+                    "Target": "HS_Merrill"
+                },
+                {
+                    "Text": "Go to Quarry Plaza",
+                    "Target": "HS_QPlaza"
+                },
+                {
+                    "Text": "Go to Oakes",
+                    "Target": "HS_Oakes"
+                }
+            ]
+        },
+        "KS_NavMenu": {
+            "Body": "Walking around campus again......... Where did you leave that keycard?",
+            "Choices": [
+                {
+                    "preReq": "HasKeyCards",
+                    "Text": "Go to Porter",
+                    "Target": "PorterKeyCard",
+                    "altMessage": "Go To Porter",
+                    "altTarget": "PorterNOKeyCard"
+                },
+                {
+                    "Text": "Go to Merrill",
+                    "Target": "KS_Merrill"
+                },
+                {
+                    "Text": "Go to Quarry Plaza",
+                    "Target": "KS_QPlaza"
+                },
+                {
+                    "Text": "Go to Oakes",
+                    "Target": "KS_Oakes"
+                }
+            ]
+        },
+        "FULL_NavMenu": {
+            "Body": "You already have your keycard and you know where you live. Why would you want to walk around campus again? Just go to bed please. I dont want to write more story.",
+            "Choices": [
+                {
+                    "Text": "Stay in Porter",
+                    "Target": "PorterKeyCard"
+                }
+            ]
+        },
+        "HS_Oakes": {
+            "Body": "Oakes is so nice today, the sun is shining and the birds are chirping. You walk around the college and take in the sights. You realize that you don't live here and you should probably go somewhere else.",
+            "Choices": [
+                {
+                    "Text": "Choose a new place",
+                    "Target": "HS_NavMenu"
+                }
+            ]
+        },
+        "HS_QPlaza": {
+            "Body": "Nope, not here. The school hasn't become desperate enough to house students in the bookstore just yet. You should try somewhere else.",
+            "Choices": [
+                {
+                    "Text": "Choose a new place",
+                    "Target": "HS_NavMenu"
+                }
+            ]
+        },
+        "HS_Merrill": {
+            "Body": "Nope, not here. You don't live in Merrill. You should try somewhere else.",
+            "Choices": [
+                {
+                    "Text": "Choose a new place",
+                    "Target": "HS_NavMenu"
+                }
+            ]
+        },
+        "KS_Oakes": {
+            "Body": "The weather today is perfect. You walk down to the lower lawn and take in the view of the ocean.",
+            "Choices": [
+                {
+                    "Text": "Choose a new place",
+                    "Target": "KS_NavMenu"
+                }
+            ]
+        },
+        "KS_QPlaza": {
+            "Body": "You *could* go up an talk to ID card services, but they are never open when you need them. You should probably try somewhere else.",
+            "Choices": [
+                {
+                    "Text": "Choose a new place",
+                    "Target": "KS_NavMenu"
+                }
+            ]
+        },
+        "KS_Merrill": {
+            "Body": "The Merrill moat has some neat art, but otherwise there's nothing here for you.",
+            "Choices": [
+                {
+                    "Text": "Choose a new place",
+                    "Target": "KS_NavMenu"
+                }
+            ]
+        },
+        "PorterKeyCard": {
+            "Body": "Ah, Porter. You live in Porter. Thankfully you found your keycard earlier. Now you can use it to go inside.",
+            "Choices": [
+                {
+                    "preReq": "HasKeyCards",
+                    "Text": "Enter your room",
+                    "Target": "PorterInt",
+                    "altMessage": "The door is locked. You need your keycard to get in.",
+                    "altTarget": "Porter"
+                },
+                {
+                    "Text": "Go somewhere else",
+                    "Target": "FULL_NavMenu"
+                }
+            ]
+        },
+        "PorterNOKeyCard": {
+            "Body": "Ah, Porter. You live in Porter. You walk up to the building and make it to your dorm. BUT WAIT! You forgot your keycard. You can't get in without it. You should probably go back and get it. (Wait, where did you leave it?)",
+            "Choices": [
+                {
+                    "preReq": "HasKeyCards",
+                    "Text": "Enter your room",
+                    "Target": "PorterInt",
+                    "altMessage": "The door is locked. You need your keycard to get in.",
+                    "altTarget": "PorterNOKeyCard"
+                },
+                {
+                    "Text": "Go somewhere else",
+                    "Target": "KS_NavMenu"
+                }
+            ]
+        },
+        "PorterInt": {
+            "Body": "It took you all day to get here, but you finally made it. You enter your room and collapse on your bed. You made it home. You can finally rest."
+        }
+    }
+}

@@ -1,0 +1,20 @@
+In this assignment, a continuation from Part (a), it is time to implement your link-based game world. Attach the electrodes, apply some electricity, and bring this game world to life!
+
+Note that this is an individual (not group-based) assignment. However, you are welcome to talk with other students about your game, and ask other students for help with your code, so long as you understand all of the code you submit, and the work in the game is all substantially yours.
+
+As described in part(a), your link-based game world must, at minimum, have the following elements:
+
+[Location-specific interactive mechanism] There must be at least one location in the world where there is a special-purpose interactive mechanism. This interactive mechanism should be implemented using a custom Scene, most likely a subclass of Location, and there needs to be some element in myStory.json to indicate the presence of the mechanism. This mechanism could be many things. Some examples include:
+A radio which turns on and off, and gives one of several messages to the player.
+A dog you can pet which rolls over onto its tummy, or maybe goes and fetches an object...
+ A button which opens a secret door.
+Some food you can eat, which bring back memories...
+[Lock and key puzzle] There must be at least one "lock and key" puzzle. In a lock and key puzzle, the player needs to collect a "key" from one location in the game world, and then use it in a different location in the game world. Using the key "unlocks" (opens) a previously blocked exit (link). Your implementation of this feature must be data-driven. That is, the location of the key and the link (the "Choice") it opens must be specified in the myStory.json file. In your game world, the "key" doesn't literally need to be a key; it could be any item, so long as it acts to unlock a previously blocked exit.
+For additional challenge, consider adding the following:
+
+[Item System] Create a general-purpose game item system. That is, make it possible to create a wide range of different kinds of game items (e.g., lamp, book, blaster, telescope, etc.), with varying behavior. The initial location of each item should be given in the myStory.json file. The behavior of each kind of item should be defined using a subclass of a new "GameWorldItem" class.
+[Get Lamp] Add a lamp/lantern/flashlight mechanic. Some areas in the game world are not visible unless you have the lamp/lantern/flashlight, and it is turned on. 
+[Babelfish Puzzle] In the classic text-based interactive fiction game Hitchhiker's Guide to the GalaxyLinks to an external site. (based on the books by Douglas AdamsLinks to an external site.), there is a puzzle where the player must catch the "babelfish", which translates alien speech into English. The puzzle is multi-step, and involves setting up a complex set of conditionsLinks to an external site. which allow the player to finally catch the babelfish. Implement a puzzle like the babelfish puzzle (don't exactly replicate the puzzle) which involves going through multiple steps and setting up a complex set of conditions before the player can solve the puzzle.
+[Carousel] Implement a carousel, where the exit the player takes from a location is chosen randomly, ignoring their actual choice of exit.
+Submission instructions:
+For this assignment, please upload a URL to a new GitHub repo you have created for this assignment.
